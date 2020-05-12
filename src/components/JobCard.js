@@ -1,6 +1,5 @@
 import React from "react";
-import SkillTag from "./SkillTag";
-import ToolTag from "./ToolsTag";
+import Tag from "./Tag";
 
 const JobCard = props => {
   const { job } = props;
@@ -24,12 +23,23 @@ const JobCard = props => {
       <img src={images[logoKey]} alt="logo" />
 
       {job.company}
-      {job.tools.map(tool => (
-        <ToolTag key={`${job.id}-${tool}`} tool={tool} />
-      ))}
-      {job.languages.map(lang => (
-        <SkillTag key={`${job.id}-${lang}`} lang={lang} />
-      ))}
+      <section className="cardTags">
+        {/* Role i.e. Frontend */}
+        <Tag key={`${job.id}-${job.role}`} tag={job.role} />
+
+        {/* Level i.e. Senior */}
+        <Tag key={`${job.id}-${job.level}`} tag={job.level} />
+
+        {/* Languages i.e. JavaScript*/}
+        {job.languages.map(lang => (
+          <Tag key={`${job.id}-${lang}`} tag={lang} />
+        ))}
+
+        {/* Tools i.e. React*/}
+        {job.tools.map(tool => (
+          <Tag key={`${job.id}-${tool}`} tag={tool} />
+        ))}
+      </section>
 
       <div>
         {job.postedAt} {job.contract} {job.location}
