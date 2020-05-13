@@ -4,7 +4,7 @@ import JobData from "../data/data.json";
 
 const JobList = () => {
   return (
-    <div>
+    <div className="jobList">
       {JobData.map(job => {
         return <JobCard key={job.id} job={job} />;
       })}
