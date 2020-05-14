@@ -4,12 +4,26 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
   background-color: $background;
   font-family: $main-font;
   font-size: 1.5em;
+  height: 100%;
+}
+
+.header {
+  width: 1440px;
+  height: 150px;
+  background-color: $primary;
+  margin: 0 auto;
+  background-image: url("../images/bg-header-desktop.svg");
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 375px;
+  }
 }
 
 .tag {
@@ -44,4 +58,12 @@ body {
   height: 1.75em;
   width: 7em;
   text-transform: uppercase;
+}
+
+.jobList {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
 }

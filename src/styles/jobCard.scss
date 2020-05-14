@@ -3,15 +3,17 @@
   align-items: center;
   justify-content: space-between;
   width: 70%;
+  height: 100%;
   margin: 1em auto;
   padding: 2em;
   background-color: white;
+  border-radius: 10px;
 
   .left {
     display: flex;
   }
 
-  .header {
+  .cardHeader {
     display: flex;
     align-items: center;
     margin-bottom: 0.5em;
@@ -49,4 +51,8 @@
     height: 2em;
     border-radius: 5px;
   }
+}
+
+.selected {
+  background: linear-gradient(to right, $primary 5px, white 5px);
 }

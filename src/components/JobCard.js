@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Tag from "./Tag";
 
 const JobCard = props => {
   const { job } = props;
+  const [selected, setSelected] = useState(false);
 
   function importAll(r) {
     const images = {};
@@ -21,12 +22,20 @@ const JobCard = props => {
 
   const logoKey = job.logo.slice(9);
 
+  const selectCard = () => {
+    setSelected(!selected);
+    console.log("clicked", selected);
+  };
+
   return (
-    <div className="card">
+    <div
+      className={`card ${selected && "selected"}`}
+      onClick={() => selectCard()}
+    >
       <div className="left">
         <img src={images[logoKey]} alt="logo" className="logo" />
         <section className="content">
-          <div className="header">
+          <div className="cardHeader">
             <span className="company">{job.company}</span>
             {job.new && <span className="new">New!</span>}
             {job.featured && <span className="featured">Featured</span>}
