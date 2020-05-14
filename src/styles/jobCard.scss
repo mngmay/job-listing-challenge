@@ -1,6 +1,58 @@
-.jobCard {
-  border: 1px solid gray;
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 70%;
+  height: 100%;
   margin: 1em auto;
   padding: 2em;
+  background-color: white;
+  border-radius: 10px;
+
+  .left {
+    display: flex;
+  }
+
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+    width: 100%;
+    padding-left: 1.4em;
+
+    .company {
+      color: $primary;
+      font-weight: 700;
+      margin-right: 1em;
+    }
+
+    .new {
+      margin-right: 1em;
+    }
+  }
+  .position {
+    font-weight: 700;
+    font-size: 1.25em;
+    color: $veryDark;
+    padding: 0.5em 1em;
+  }
+
+  .bottom {
+    padding: 0.5em 1em;
+    color: $dark;
+
+    span {
+      margin: 0.35em;
+    }
+  }
+
+  .tag {
+    margin: 0.5em;
+    height: 2em;
+    border-radius: 5px;
+  }
+}
+
+.selected {
+  background: linear-gradient(to right, $primary 5px, white 5px);
 }
